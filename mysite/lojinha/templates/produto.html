@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-6">
+            <div id="carouselExample_{{produto.id}}" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{produto.img_url_principal}}" class="d-block w-100 card-img-top" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{produto.img_url_secundaria}}" class="d-block w-100 card-img-top" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{produto.img_url_lateral}}" class="d-block w-100 card-img-top" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{produto.img_url_superior}}" class="d-block w-100 card-img-top" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample_{{produto.id}}"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample_{{produto.id}}"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-6">
+            <h2 class="">{{produto.descricao}}</h2>
+            <p class="text-center text-danger h1">{{produto.preco}}</p>
+            <p>{{produto.informacoes}}</p>
+            <p>Estoque: {{produto.quantidade}}</p>
+            <div>
+                <button type="button" class="btn btn-success btn-lg" onclick="abrirSiteDeCompra('{{produto.link_compra}}')">Comprar Agora</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

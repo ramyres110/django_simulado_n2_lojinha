@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-6 d-flex justify-content-center align-itens-center">
+            <div class="border rounded">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.3535188353426!2d-49.485941024218455!3d-16.659183844844936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e5d7fd48b7361%3A0xb3fd6a0440df50f2!2sFaculdades%20e%20Col%C3%A9gio%20Aphonsiano!5e0!3m2!1spt-BR!2sbr!4v1718250107171!5m2!1spt-BR!2sbr"
+                    width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="col-6">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputNome" class="form-label">Nome</label>
+                    <input name="nome" type="text" class="form-control" id="exampleInputNome" aria-describedby="nomeHelp" required>
+                    <div id="nomeHelp" class="form-text">Informe seu nome</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Email</label>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Informe seu email.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+                    <textarea name="mensagem" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
