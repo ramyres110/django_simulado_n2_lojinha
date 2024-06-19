@@ -12,7 +12,8 @@ def page_produto_detalhe(request, produto_id):
     return render(request, "produto.html", {"produto": produto})
 
 def page_promocao(request):
-    return HttpResponse("Em construção!")
+    promocoes = models.Promocao.objects.all()
+    return render(request, "promocoes.html", {"promocoes": promocoes})
 
 def page_contato(request):
     if request.method == 'POST':
@@ -23,4 +24,4 @@ def page_contato(request):
         contato.save()
         return redirect("inicio")
     else:
-        return HttpResponse("Em construção!")
+        return render(request, "contato.html", {})

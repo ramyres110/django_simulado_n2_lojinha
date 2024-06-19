@@ -4,3 +4,4 @@ from . import models
 # Register your models here.
 admin.site.register(models.Produto)
 admin.site.register(models.Contato)
+admin.site.register(models.Promocao)

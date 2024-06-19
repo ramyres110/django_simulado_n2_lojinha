@@ -5,7 +5,7 @@ function abrirSiteDeCompra(link){
     if(!link){
         return;
     }
-    alert("Ir para o site?")
+    //alert("Ir para o site?")
     return window.open(link, '_blank');
 }
 
